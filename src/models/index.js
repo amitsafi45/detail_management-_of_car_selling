@@ -21,4 +21,5 @@ const db={}
  db.employee=employee(sequelize,DataTypes)
  db.invoice=invoice(sequelize,DataTypes)
  db.employee_Qualification=employee_Qualification(sequelize,DataTypes)
+ db.employee.hasMany(db.car)
  export default db
