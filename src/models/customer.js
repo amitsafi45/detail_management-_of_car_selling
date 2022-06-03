@@ -4,6 +4,7 @@ export default (sequelize,DataTypes)=>{
             type:DataTypes.STRING,
             allowNull:false,
             primaryKey:true,
+            unique:true 
             
         },
         name:{
@@ -13,13 +14,15 @@ export default (sequelize,DataTypes)=>{
         phone_number:{
             type:DataTypes.STRING,
             allowNull:false
+             
         },
         address:{
             type:DataTypes.STRING,
             allowNull:false
         },
         country:{
-            type:DataTypes.STRING
+            type:DataTypes.STRING,
+            allowNull:false
         },
         city:{
             type:DataTypes.STRING,

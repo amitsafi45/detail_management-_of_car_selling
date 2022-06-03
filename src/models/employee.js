@@ -4,6 +4,7 @@ export default (sequelize,DataTypes)=>{
         type:DataTypes.STRING,
         allowNull:false,
         primaryKey:true,
+        unique:true 
         
     },
     name:{

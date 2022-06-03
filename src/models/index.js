@@ -21,5 +21,35 @@ const db={}
  db.employee=employee(sequelize,DataTypes)
  db.invoice=invoice(sequelize,DataTypes)
  db.employee_Qualification=employee_Qualification(sequelize,DataTypes)
- db.employee.hasMany(db.car)
+ //making relation
+ db.employee.hasMany(db.car,{
+    foreignKey:"employee_id"
+})
+ db.car.belongsTo(db.employee,{
+    foreignKey:"employee_id"
+ })
+ db.customer.hasMany(db.car,{
+    foreignKey:"customer_id"
+ })
+ db.car.belongsTo(db.customer,{
+    foreignKey:"customer_id"
+ })
+ db.customer.hasMany(db.invoice,{
+    foreignKey:"customer_id"
+ })
+ db.invoice.belongsTo(db.customer,{
+    foreignKey:"customer_id"
+ })
+ db.employee.hasMany(db.invoice,{
+    foreignKey:"employee_id"
+ })
+ db.invoice.belongsTo(db.employee,{
+    foreignKey:"employee_id"
+ })
+ db.employee.hasMany(db.employee_Qualification,{
+    foreignKey:"employee_id"
+ })
+ db.employee_Qualification.belongsTo(db.employee,{
+    foreignKey:"employee_id"
+ })
  export default db
